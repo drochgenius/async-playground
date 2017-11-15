@@ -23,13 +23,17 @@ function updateFile(filename) {
 }
 
 async function main() {
+    // initialize
     await init();
 
     // unzip my epub
     const result = await unzipEpub('data/foo.epub', 'data/temp');
+
     console.log('EPUB UNZIPPED', result);
+
     // update the file
     updateFile('data/temp/index.html');
+    
     // rezip my epub
     await zipEpub('data/temp', 'data/bar.epub');
 

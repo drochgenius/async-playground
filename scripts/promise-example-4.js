@@ -7,10 +7,10 @@ const readFile = promisify(fs.unlink);
 const access = promisify(fs.access);
 const unlink = promisify(fs.unlink);
 
-process.on('unhandledRejection', error => {
+/*process.on('unhandledRejection', error => {
     console.error('ERROR', error);
   });
-
+*/
 async function init() {
     const file = 'data/bar.epub';
 
@@ -38,18 +38,19 @@ async function main() {
     // unzip my epub
     const result = await unzipEpub('data/foo.epub', 'data/temp');
     console.log('EPUB UNZIPPED', result);
-    
-    
+
+
     // update the file
     updateFile('data/temp/index.html');
-    
+
     // invalid code
     stop.here();
-    
+
     // rezip my epub
     await zipEpub('data/temp', 'data/bar.epub');
 
     console.log('SUCCESS');
 }
 
-main();
+main()
+    .catch(err => console.error(err));

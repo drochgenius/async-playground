@@ -42,7 +42,7 @@ The `await` keyword allows to **suspend** a script execution until a Promise is 
 ```javascript
 async function foo(bar);
 
-async function foo(bar){
+async function bar(){
     const x = await foo(1);
     const y = await foo(2);
     const z = await foo(3);

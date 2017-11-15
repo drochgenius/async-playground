@@ -3,7 +3,7 @@ const { promisify } = require('util');
 const { zipEpub, unzipEpub } = require('@hmh/epub-archiver');
 
 // using promisify
-const readFile = promisify(fs.unlink);
+const readFile = promisify(fs.readFile);
 const access = promisify(fs.access);
 const unlink = promisify(fs.unlink);
 
@@ -34,12 +34,12 @@ async function main() {
     // unzip my epub
     const result = await unzipEpub('data/foo.epub', 'data/temp');
     console.log('EPUB UNZIPPED', result);
-    
-    
+
+
     // update the file
     updateFile('data/temp/index.html');
-    
-    
+
+
     // rezip my epub
     await zipEpub('data/temp', 'data/bar.epub');
 
