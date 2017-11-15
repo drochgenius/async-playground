@@ -114,3 +114,20 @@ const unlink = promisify(fs.unlink);
 ```
 
 **IMPORTANT**: Take note that your callback must comply with standard NodeJS convention or it won't work.
+
+## Async functions with Gulp
+
+```javascript
+
+gulp.task('foo', ['bar'], async () =>{
+    await doSomeAsynchronousStuff();
+});
+```
+
+
+## Async functions with Grunt
+
+Unfortunately, Grunt does not directly support Promises.
+Therefore, it doesn't offer out of the box support like Gulp.
+
+You have to workaround with attaching callbacks to the Promises.
