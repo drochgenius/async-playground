@@ -1,0 +1,15 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dominique Rochefort <dominique.rochefort@hmhco.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@hmh/epub-archiver": "^1.1.2"
+  }
+}
